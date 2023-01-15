@@ -1,8 +1,8 @@
-# Container image that runs your code
-FROM ubuntu:22.04
+# Container image
+FROM alpine:3.17
 
-# Copies your code file from your action repository to the filesystem path `/` of the container
+# Copy script to image
 COPY entrypoint.sh /entrypoint.sh
 
-# Code file to execute when the docker container starts up (`entrypoint.sh`)
-ENTRYPOINT ["bash", "/entrypoint.sh"]
+# Execute script
+ENTRYPOINT ["sh", "/entrypoint.sh"]
